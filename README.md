@@ -25,3 +25,10 @@ This interactive password generator is designed to generate random passwords for
 - The for loop runs a set number of times, depending on how many characters the user requested to be in their password. 
 - Lastly, the generatePassword function returns the joined letters of the passwordOutput array.
 - The password is then displayed on the page by manipulating the DOM. 
+
+### Project URL
+
+URL: https://zacktmiller92.github.io/password-generator/index.html
+
+![project screenshot](./assets/images/password-generator-screenshot.png)
+
