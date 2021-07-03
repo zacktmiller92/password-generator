@@ -18,7 +18,7 @@ function generatePassword() {
   var howManyCharacters = window.prompt("How many characters do you want?")
   howManyCharacters = parseInt(howManyCharacters)
 
-  while ( howManyCharacters >= 128 || howManyCharacters <= 8 || isNaN(howManyCharacters)) {
+  while ( howManyCharacters > 128 || howManyCharacters <= 8 || isNaN(howManyCharacters)) {
     alert("Enter a number between 8 and 28 characters.")
     var howManyCharacters = window.prompt("How many characters do you want?")
     howManyCharacters = parseInt(howManyCharacters)
