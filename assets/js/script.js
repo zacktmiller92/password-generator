@@ -14,26 +14,21 @@ function generateRandomNumber (min,max) {
 function generatePassword() {
   var chars = []
   var passwordOutput = []
-  
+  var howManyCharacters = 10;
   var howManyCharacters = window.prompt("How many characters do you want?")
   howManyCharacters = parseInt(howManyCharacters)
-  debugger;
-  if (
-    !isNaN(howManyCharacters) &&
-    howManyCharacters <= 128 &&
-    howManyCharacters >= 8
-    ) {
-      
-  } else {
-    window.alert("Please enter a number between 8 and 128 characters.")
-    generatePassword();
+
+  while ( howManyCharacters >= 128 || howManyCharacters <= 8 || isNaN(howManyCharacters)) {
+    alert("Enter a number between 8 and 28 characters.")
+    var howManyCharacters = window.prompt("How many characters do you want?")
+    howManyCharacters = parseInt(howManyCharacters)
   }
 
-  var wantNumbers = window.confirm("Do you want numbers?")
-  var wantSpecialChars = window.confirm("Do you want special characters?")
-  var wantUpper = window.confirm("Do you want uppercase characters?")
-  var wantLower = window.confirm("Do you want lowercase characters?")
-  
+  var wantNumbers = window.confirm("Do you want numbers?");
+  var wantSpecialChars = window.confirm("Do you want special characters?");
+  var wantUpper = window.confirm("Do you want uppercase characters?");
+  var wantLower = window.confirm("Do you want lowercase characters?");
+
   if (wantNumbers) {
     chars = chars.concat(nums)
   };
@@ -46,13 +41,11 @@ function generatePassword() {
   if (wantLower) {
     chars = chars.concat(lowerLetters)
   };
-
   //generate the password
-  for (var i=0; i < howManyCharacters; i++) {
-    passwordOutput = passwordOutput.concat(chars[generateRandomNumber(1,chars.length)])
-  }
-
-  return passwordOutput.join("");
+  for (var i = 0; i < howManyCharacters; i++) {
+    passwordOutput = passwordOutput.concat(chars[generateRandomNumber(1, chars.length)])
+  };
+  return (passwordOutput.join(""));
 };
 
 // Get references to the #generate element
