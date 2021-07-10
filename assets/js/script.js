@@ -47,10 +47,10 @@ function generatePassword() {
     }
   } else {
     window.alert("Please enter a number between 8 and 128 characters.")
-    generatePassword();
+    passwordOutput = generatePassword();
   }
   
-  return passwordOutput.join("");
+  return passwordOutput;
 };
 
 // Get references to the #generate element
@@ -58,7 +58,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = generatePassword().join("");
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
