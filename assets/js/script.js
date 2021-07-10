@@ -17,7 +17,7 @@ function generatePassword() {
 
   var howManyCharacters = window.prompt("How many characters do you want?")
   howManyCharacters = parseInt(howManyCharacters)
-  debugger;
+  // debugger;
   if (
     !isNaN(howManyCharacters) &&
     howManyCharacters <= 128 &&
@@ -47,7 +47,7 @@ function generatePassword() {
     }
   } else {
     window.alert("Please enter a number between 8 and 128 characters.")
-    generatePassword();
+    return generatePassword();
   }
   
   return passwordOutput.join("");
